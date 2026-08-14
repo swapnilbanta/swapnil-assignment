@@ -23,18 +23,6 @@ import TimelineView from "./components/TimelineView";
 import DeliveryView from "./components/DeliveryView";
 import Track from "./components/Track";
 
-
-
-
-
-
-
-
-
-
-
-
-
 export default function App() {
   const [page, setPage] = useState("home");
   const [timelineStep, setTimelineStep] = useState(0);
