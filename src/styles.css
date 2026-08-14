@@ -1,0 +1,677 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Racing+Sans+One&display=swap");
+
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #f5f5f5;
+  background: #202020;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+.experience {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 51%,
+      #070303 0 11%,
+      transparent 11.2%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 22%,
+      rgba(28, 19, 20, 0.36) 22.2% 42%,
+      transparent 42.2%
+    ),
+    radial-gradient(circle at 50% 30%, #1a0b0d 0, #060707 70%);
+  transition: 0.3s;
+}
+
+.experience::before {
+  content: "";
+  position: absolute;
+  inset: 3% 2%;
+  opacity: 0.35;
+  background-image: radial-gradient(#fff 1px, transparent 1px);
+  background-size: 53px 47px;
+  mask-image: linear-gradient(to bottom, #000, transparent 30%);
+  pointer-events: none;
+}
+
+.experience.light {
+  filter: brightness(1.22);
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 34px;
+  z-index: 4;
+}
+
+.logo img {
+  display: block;
+  width: 145px;
+  height: auto;
+  object-fit: contain;
+}
+
+.logo > span {
+  font-size: 22px;
+}
+
+.logo span span,
+.hero-title em {
+  color: #d40008;
+}
+
+.logo small {
+  display: block;
+  text-align: center;
+  font-size: 5px;
+  letter-spacing: 4px;
+  color: #aaa;
+}
+
+.round-button {
+  width: 54px;
+  height: 54px;
+  border: 1px solid #343434;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 35% 25%, #777, #161719 62%);
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 1px #ffffff77,
+    0 6px 18px #00000088;
+  transition: 0.2s;
+}
+
+.round-button:hover {
+  transform: scale(1.07);
+}
+
+.round-button svg {
+  width: 21px;
+}
+
+.round-button.active {
+  background: radial-gradient(circle at 35% 25%, #d93737, #980008 62%);
+  border-color: #e42026;
+}
+
+.back {
+  position: absolute;
+  z-index: 5;
+  left: 30px;
+  top: 95px;
+  width: 43px;
+  height: 43px;
+  background: #17191a;
+}
+
+.theme {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  z-index: 5;
+  display: flex;
+  background: #151617;
+  border-radius: 30px;
+  padding: 10px 14px;
+  gap: 16px;
+}
+
+.theme button {
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.theme svg {
+  width: 16px;
+}
+
+.actions {
+  position: absolute;
+  z-index: 5;
+  right: 30px;
+  top: 102px;
+  display: flex;
+  gap: 10px;
+}
+
+.actions .round-button {
+  width: 44px;
+  height: 44px;
+}
+
+.side-nav {
+  position: absolute;
+  z-index: 5;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-nav::before {
+  content: "";
+  position: absolute;
+  inset: -24px -20px;
+  border: 1px dashed #aaa;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.left-nav {
+  left: 6.5%;
+}
+
+.right-nav {
+  right: 6.5%;
+}
+
+.hero-title {
+  position: absolute;
+  z-index: 2;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+}
+
+.hero-title h1 {
+  margin: 0;
+  font-family: "Racing Sans One", Georgia, serif;
+  font-size: clamp(36px, 4vw, 64px);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.hero-title p {
+  color: #aaa;
+  font-weight: 600;
+  margin: 16px 0 9px;
+}
+
+.hero-title > i {
+  display: block;
+  width: 23px;
+  height: 4px;
+  border-radius: 4px;
+  background: #d60008;
+  margin: auto;
+}
+
+.center-view {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.car-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  background-position: center;
+  background-size: cover;
+  box-shadow:
+    0 25px 50px #ffffff33,
+    0 0 30px #000;
+}
+
+.red-car {
+  background-image: url("/assets/blue-car.jpg");
+}
+
+.blue-car {
+  background-image: url("/assets/red-car.png");
+}
+
+.performance-car {
+  background-image: url("/assets/performance-car.jpg");
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  min-width: 120px;
+}
+
+.stats b {
+  font-size: 28px;
+  margin-top: 35px;
+}
+
+.stats small {
+  color: #aaa;
+}
+
+.stats.left {
+  text-align: right;
+}
+
+.stats.right {
+  text-align: left;
+}
+
+.track {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 26vh;
+  min-height: 185px;
+}
+
+.track svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.track path {
+  fill: none;
+  stroke: #e00008;
+  stroke-width: 1.3;
+  stroke-dasharray: 7 6;
+}
+
+.track .fill {
+  stroke: none;
+  fill: url("#trackFill");
+}
+
+.lap-list {
+  position: absolute;
+  inset: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 22px;
+}
+
+.lap {
+  width: 130px;
+  text-align: center;
+  color: #686568;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lap i {
+  position: absolute;
+  top: var(--y);
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: #777;
+  box-shadow: 0 0 0 11px #49383a88;
+}
+
+.lap:nth-child(1) i {
+  top: 47%;
+}
+
+.lap:nth-child(2) i {
+  top: 39%;
+}
+
+.lap:nth-child(3) i {
+  top: 29%;
+}
+
+.lap:nth-child(4) i {
+  top: 21%;
+}
+
+.lap:nth-child(5) i {
+  top: 7%;
+}
+
+.lap b {
+  font-size: 14px;
+  color: #bbb;
+  margin-bottom: 7px;
+}
+
+.lap span {
+  font-size: 14px;
+}
+
+.lap.current {
+  color: #eee;
+}
+
+.lap.current b {
+  color: #fff;
+}
+
+.lap.current i {
+  background: #e30008;
+  box-shadow: 0 0 0 11px #6b070b99;
+}
+
+.process-view {
+  position: absolute;
+  inset: 30% 23% 28%;
+}
+
+.process-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 57%;
+  height: 2px;
+  background: #650007;
+}
+
+.process-line .progress {
+  height: 100%;
+  background: #e00008;
+  transition: width 0.7s;
+}
+
+.process-line > i {
+  position: absolute;
+  top: -7px;
+  width: 16px;
+  height: 16px;
+  background: #830008;
+  border-radius: 50%;
+}
+
+.car-token {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: url("/assets/red-car.png") center / cover;
+  border: 2px solid #ddd;
+  box-shadow: 0 8px 22px #ffffff55;
+  transition: left 0.7s;
+}
+
+.process-card {
+  position: absolute;
+  top: 13%;
+  transform: translateX(-50%) skew(-14deg);
+  width: 230px;
+  padding: 38px 25px;
+  text-align: center;
+  background: #7779;
+  border: 4px solid #302d2e;
+  transition: left 0.7s;
+}
+
+.process-card > * {
+  display: block;
+  transform: skew(14deg);
+}
+
+.process-card span {
+  margin-top: 7px;
+  color: #ddd;
+}
+
+.delivery-view {
+  position: absolute;
+  z-index: 3;
+  top: 27%;
+  left: 50%;
+  width: min(64vw, 1000px);
+  height: min(31vw, 390px);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delivery-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Round car image on the left */
+.delivery-car {
+  position: absolute;
+  z-index: 3;
+  left: -5%;
+  top: 50%;
+  width: clamp(130px, 11vw, 180px);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  border: 7px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow:
+    0 20px 45px rgba(255, 255, 255, 0.28),
+    0 0 0 12px rgba(255, 255, 255, 0.03);
+}
+
+/* Use your actual car image here */
+.blue-car {
+  background-image: url("/assets/red-car.png");
+}
+
+/* Wide truck container matching Figma proportions */
+.truck {
+  position: relative;
+  width: 110%;
+  flex-shrink: 0;
+  aspect-ratio: 1002 / 392;
+  transition: transform 0.8s ease;
+}
+
+/* Flip only the truck image so its cabin faces right */
+.truck::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/truck.png") center / contain no-repeat;
+  transform: scaleX(-1);
+  transform-origin: center;
+}
+
+/* Center text inside the white truck panel */
+.truck span {
+  position: absolute;
+  z-index: 2;
+  left: 15%;
+  top: 43%;
+  width: 68%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  justify-content: center;
+  color: #292929;
+  font-family: Inter, Arial, sans-serif;
+  font-size: clamp(14px, 1.5vw, 24px);
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Delivery animation positions */
+.truck.step-0 {
+  transform: translateX(-3%);
+}
+
+.truck.step-1 {
+  transform: translateX(1%);
+}
+
+.truck.step-2 {
+  transform: translateX(4%);
+}
+
+.delivery-status {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #aaa;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.thanks {
+  text-align: center;
+}
+
+.thanks h2 {
+  margin: 0 0 25px;
+  font: italic 52px "Racing Sans One", serif;
+}
+
+.thanks button {
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 48px;
+  background: #454545;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.hint {
+  position: absolute;
+  z-index: 7;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #777;
+}
+
+@media (max-width: 900px) {
+  .delivery-view {
+    top: 31%;
+    width: 80vw;
+    height: auto;
+  }
+
+  .delivery-car {
+    left: -8%;
+    width: 120px;
+  }
+
+  .truck {
+    width: 92%;
+  }
+
+  .hero-title {
+    top: 9%;
+  }
+
+  .side-nav {
+    transform: scale(0.8);
+  }
+
+  .left-nav {
+    left: 2%;
+  }
+
+  .right-nav {
+    right: 2%;
+  }
+
+  .center-view {
+    gap: 20px;
+  }
+
+  .car-circle {
+    width: 230px;
+    height: 230px;
+  }
+
+  .stats b {
+    font-size: 20px;
+  }
+
+  .delivery-view {
+    inset: 25% 10%;
+  }
+
+  .delivery-car {
+    display: none;
+  }
+
+  .lap {
+    width: 90px;
+  }
+
+  .lap span {
+    display: none;
+  }
+
+  .process-view {
+    inset: 30% 18% 28%;
+  }
+}
+
+@media (max-height: 700px) {
+  .hero-title {
+    top: 6%;
+  }
+
+  .hero-title h1 {
+    font-size: 42px;
+  }
+
+  .center-view {
+    top: 48%;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  .track {
+    height: 24vh;
+  }
+
+  .process-view {
+    top: 25%;
+  }
+
+  .delivery-view {
+    top: 23%;
+  }
+}
